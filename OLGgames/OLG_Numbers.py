@@ -5,7 +5,7 @@ numberList = []
 
 
 def getNumber():
-    return random.randrange(1,4)
+    return random.randint(1,49)
 
 def listInsert(numberToAdd):
     numberList.append(validateNumber(numberList, numberToAdd)) 
@@ -15,14 +15,20 @@ def listLength():
     return len(numberList)
 
 #Makes sure that a number isnt repeated within the list
-def validateNumber(numberLists, numberToAdd):
-    if numberToAdd in numberList:
-        numberToAdd = getNumber()
-        print("check")
-        validateNumber(numberList, numberToAdd)
-    return numberToAdd
+def validateNumber(numberList, numberToAdd):
+    if numberToAdd not in numberList:
+        return numberToAdd
+    numberToAdd = getNumber()
+    return validateNumber(numberList, numberToAdd)
 
-for i in range(3):
-    print(listInsert(getNumber()))
+def getOLGSet():
+    for i in range(6):
+     listInsert(getNumber())
+
+getOLGSet()
+numberList.sort()
+print(numberList)
+
+#combination play 5/7/8/9
 
 #print(numberList)
