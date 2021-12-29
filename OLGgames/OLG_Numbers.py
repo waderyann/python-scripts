@@ -7,6 +7,9 @@ numberList = []
 def getNumber():
     return random.randint(1,49)
 
+def getNumber_50():
+    return random.randint(1,50)
+
 def listInsert(numberToAdd):
     numberList.append(validateNumber(numberList, numberToAdd)) 
     return numberList
@@ -24,10 +27,15 @@ def validateNumber(numberList, numberToAdd):
 def getOLGSet():
     for i in range(6):
      listInsert(getNumber())
+    
+def getOLGLottoMax():
+    for i in range(7):
+        listInsert(getNumber_50())
 
-getOLGSet()
+getOLGLottoMax()
 numberList.sort()
 print(numberList)
+print("Good Luck!!")
 
 #combination play 5/7/8/9
 
